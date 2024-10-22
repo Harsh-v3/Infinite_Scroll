@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="src/images/infinity_favicon.webp"
+      type="image/x-icon"
+    />
+    <title>Infinite Scroll</title>
+    <!-- style sheets -->
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <!-- Heading -->
+    <div class="heading-container">
+      <div class="container">
+        <div id="ball"></div>
+        <h1 id="animation-v1" class="heading-text">Infinite Scroll</h1>
+        <div class="cursor"></div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="text-para">
+        <h2 class="sub-heading-text">
+          Welcome to our Infinite Scroll gallery!
+        </h2>
+        Here, you can explore a vast collection of stunning images from
+        Unsplash. As you scroll down, new images will load seamlessly, allowing
+        you to discover more without interruption.
+        <br />
+        <br />
+        This website demonstrates the infinite scroll functionality, creating a
+        smooth and engaging browsing experience. Whether you’re looking for
+        inspiration or just want to enjoy beautiful photography, dive in and
+        start scrolling!
+        <br />
+        <a href="#" class="btn-text"> Happy exploring &nbsp; &rarr;</a>
+      </div>
+      <div class="main-img">
+        <img
+          src="src/images/images-grid-whitesmoke.png"
+          alt="img"
+          class="main-img__img"
+        />
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" hidden>
+      <img
+        src="src/images/loading-infinite.svg"
+        alt="loading_dots"
+        class="loading__image center"
+      />
+    </div>
+
+    <!-- Images -->
+    <div class="image-container" id="image-container"></div>
+
+    <!-- Script -->
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
