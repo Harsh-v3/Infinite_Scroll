@@ -77,7 +77,7 @@ async function getPhotos() {
 }
 
 // On Page Load
-// getPhotos();
+getPhotos();
 
 // Event Listener :
 
