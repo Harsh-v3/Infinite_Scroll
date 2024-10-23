@@ -1,6 +1,7 @@
 const imageContainer = document.querySelector(".image-container");
 const loader = document.querySelector(".loading");
 const cursor = document.querySelector(".cursor");
+const errorContainer = document.querySelector(".error");
 
 let photosArray = [];
 let ready = false;
@@ -55,7 +56,7 @@ function displayPhotos() {
     image.classList.add("loaded-img");
     // Event Listener , check when each image is finished loading
     image.addEventListener("load", imageLoaded);
-    // Place <img> inside the <a>
+    // Place <h3> inside the <a>
     item.appendChild(image);
     // Place the <a> inside the imageContainer
     imageContainer.appendChild(item);
@@ -73,6 +74,7 @@ async function getPhotos() {
     displayPhotos();
   } catch (error) {
     console.error(error);
+    errorContainer.hidden = false;
   }
 }
 
