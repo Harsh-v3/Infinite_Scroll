@@ -18,13 +18,20 @@ body {
   min-height: 100vh;
   width: 100dvw;
   font-family: "Lato";
-  background: rgb(245, 245, 245);
   overflow-x: hidden;
   cursor: none;
 }
 
+.header {
+  background: rgb(245, 245, 245);
+  height: 100vh;
+  width: 100dvw;
+  display: grid;
+  grid-template-rows: 15rem auto;
+}
+
 .heading-container {
-  height: 10rem;
+  height: 15rem;
   position: relative;
 }
 
@@ -184,42 +191,12 @@ breakpoint argument choices:
 1em = 16px
 */
 
-@media (width < 400px) {
-  html {
-    font-size: 25%;
-  }
-}
-
-@media (width < 600px) and (width > 400px) {
-  html {
-    font-size: 37.5%;
-  }
-}
-
-@media (width < 900px) and (width > 600px) {
-  html {
-    font-size: 56.25%;
-  }
-}
-
-@media (width < 1440px) and (width > 900px) {
-  html {
-    font-size: 62.5%;
-  }
-}
-
-@media (width > 1440px) {
-  html {
-    font-size: 100%;
-  }
-}
-
 .cursor {
   position: fixed;
   top: -2rem;
   height: 2rem;
   width: 2rem;
-  background: white;
+  background: lightgray;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
@@ -234,22 +211,24 @@ breakpoint argument choices:
 
 .main-content {
   width: 100%;
-  padding: 2rem 5rem;
+  padding: 5rem 10rem;
   line-height: 1.5;
-  display: flex;
-  align-items: center;
+  display: grid;
   gap: 5rem;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 .text-para {
-  max-width: 50%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   color: #666;
 }
 
 .sub-heading-text {
   color: lightslategrey;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 2.5rem;
   text-transform: uppercase;
   padding-bottom: 1rem;
@@ -257,35 +236,101 @@ breakpoint argument choices:
 
 .main-img {
   position: relative;
-  width: 80%;
-}
-
-.main-img__img {
   width: 100%;
-  scale: 1.2;
 }
 
-.btn-text {
-  text-decoration: none;
-  color: lightseagreen;
-  background: transparents;
-  border-bottom: 3px solid lightseagreen;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  margin-top: 1.2rem;
+.main-img img {
+  width: 100%;
+  scale: 1;
+}
+
+.sub-text {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main-text {
+  text-align: center;
+  margin: 5rem auto;
+  word-spacing: 1rem;
+  border-bottom: 0.2rem solid lightseagreen;
+  width: max-content;
+  letter-spacing: 0.1rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.error {
+  text-align: center;
+  font-size: 2rem;
+  background: lightcoral;
+  width: max-content;
+  padding: 1rem 2rem;
+  margin: auto auto;
+  border-radius: 0.2rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.bold {
   font-weight: 500;
-  font-size: 1.2rem;
-  transition: 0.2s ease-in-out;
 }
 
-.btn-text:hover {
-  color: white;
-  background: lightseagreen;
-  transform: translateY(-2px);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+@media (width < 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+  .main-content {
+    gap: 2rem;
+  }
+}
+@media (width < 900px) {
+  html {
+    font-size: 56.25%;
+  }
+  .main-content {
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .text-para {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .main-img {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    scale: 1.3;
+    transform: translateX(-10rem) translateY(-2rem);
+  }
+}
+@media (width < 600px) {
+  html {
+    font-size: 50%;
+  }
+  .main-content {
+    padding: 0rem 5rem;
+    gap: 5rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .text-para {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    transform: translateY(-5rem);
+  }
+  .main-img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    scale: 1;
+    transform: translateX(0) translateY(0);
+  }
 }
 
-.btn-text:active {
-  transform: translateY(0);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+@media (width < 400px) {
+  html {
+    font-size: 43.75%;
+  }
 }
