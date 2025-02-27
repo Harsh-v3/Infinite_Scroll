@@ -98,4 +98,6 @@ window.addEventListener("scroll", () => {
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+  if (e.target.closest(".text")) cursor.classList.add("cursor__OnText");
+  else cursor.classList.remove("cursor__OnText");
 });

@@ -210,9 +210,9 @@ breakpoint argument choices:
   z-index: 10;
 }
 
-.container #animation-v1:hover ~ .cursor {
+.cursor__OnText {
   z-index: 10;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 .main-content {
